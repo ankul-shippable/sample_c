@@ -1,45 +1,49 @@
-language: c
+# Language setting
+language: node_js
+# Version number
 
-compiler:
-  - gcc
-  - clang
+node_js:
+  - 0.12
+  #- 0.10
+ 
+env:
+  global:
+    - PROJECT_ID="56cdeca3c77dae78a8e9aafd" 
 
 build:
-  pre_ci:
-    - echo 'true'
-
   ci:
-    - ./configure && make && make install
-    - ./hello
-
-  post_ci:
-    - echo "true6"
+  - echo $PROJECT_ID
 
 integrations:
+  
   notifications:
-    - integrationName: slack-5148
+    - integrationName: ship-slack
       type: slack
       recipients:
-      - "#test-5148"
-      on_success: change
+        - "#random" 
+        - "#public-chnl"
+      on_start: always
+      on_success: always
+      on_failure: always
+      
+    - integrationName: "slack-testing"
+      type: slack
+      recipients:
+        - "#notifications"
+
       on_failure: always
       on_start: always
-      on_pull_request: never
-      
-    # - integrationName: webhook-int
-    #   type: webhook
-    #   payload:
-    #     - isPRBuild=$IS_PULL_REQUEST
-    #     - branchName=$BRANCH
-    #     - message=Shippable Run $BUILD_NUMBER ($BUILD_URL) succeeded for $COMPARE_URL
-    #     - FOO=BAR
-    #     - FIZZ=BUZZ
+      on_success: always
+    
+    - integrationName: webhook-int
+      type: webhook
+      payload:
+        - isPRBuild=$IS_PULL_REQUEST
+        - branchName=$BRANCH
+        - message=Shippable Run $BUILD_NUMBER ($BUILD_URL) succeeded for $COMPARE_URL
+        - FOO=BAR
+        - FIZZ=BUZZ
         
-  # deploy:
-  #   - integrationName: aws-deploy-int
-  #     type: aws
-  #     target: eb_paas
-  #     platform: "Node.js"
-  #     application_name: sample-node-eb-paas-app
-  #     env_name: sample-node-eb-paas-env
-  #     region: us-east-1
+      on_failure: never
+      on_start: always
+      on_success: never
