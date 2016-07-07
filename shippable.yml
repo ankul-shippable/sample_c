@@ -17,7 +17,7 @@ build:
 
 integrations:
   notifications:
-    - integrationName: slack-subInt
+    - integrationName: slack-sub-int
       type: slack
       recipients:
       - "#test-5148"
