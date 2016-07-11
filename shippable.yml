@@ -16,23 +16,23 @@ build:
 
 integrations:
   notifications:
-    - integrationName: slack-account-int
+    - integrationName: 	slack-sub-int
       type: slack
       recipients:
       - "#test-5148"
-      on_success: change
+      on_success: always
       on_failure: always
       on_start: always
       on_pull_request: never
       
-    # - integrationName: webhook-int
-    #   type: webhook
-    #   payload:
-    #     - isPRBuild=$IS_PULL_REQUEST
-    #     - branchName=$BRANCH
-    #     - message=Shippable Run $BUILD_NUMBER ($BUILD_URL) succeeded for $COMPARE_URL
-    #     - FOO=BAR
-    #     - FIZZ=BUZZ
+    - integrationName: webhook-sub-int
+      type: webhook
+      payload:
+        - isPRBuild=$IS_PULL_REQUEST
+        - branchName=$BRANCH
+        - message=Shippable Run $BUILD_NUMBER ($BUILD_URL) succeeded for $COMPARE_URL
+        - FOO=BAR
+        - FIZZ=BUZZ
         
   # deploy:
   #   - integrationName: aws-deploy-int
