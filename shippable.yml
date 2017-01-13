@@ -15,17 +15,17 @@ build:
   - echo $PROJECT_ID
 
 integrations:
-  
   notifications:
-    - integrationName: webhook-int
+    - integrationName: slack-subint
+      type: slack
+      recipients:
+        - "#test-5148"
+      on_start: always
+      
+    - integrationName: webhook-subint
       type: webhook
       payload:
         - isPRBuild=$IS_PULL_REQUEST
         - branchName=$BRANCH
         - message=Shippable Run $BUILD_NUMBER ($BUILD_URL) succeeded for $COMPARE_URL
-        - FOO=BAR
-        - FIZZ=BUZZ
-        
-      on_failure: never
       on_start: always
-      on_success: never
