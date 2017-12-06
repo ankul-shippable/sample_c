@@ -8,8 +8,7 @@ build:
     - echo 'true'
 
   ci:
-    - ./configure && make && make install
-    - ./hello
+    - echo "lang c"
 
   post_ci:
     - echo "true6"
