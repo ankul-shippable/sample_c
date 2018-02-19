@@ -16,7 +16,7 @@ build:
     - echo "lang c"
     - printenv
     - java -version    
-    - nvm ls
+    - nvm
     - echo "nvm ls done"
 
   post_ci:
