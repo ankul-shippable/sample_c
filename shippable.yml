@@ -14,8 +14,9 @@ build:
     
   ci:
     - echo "lang c"
+    - java -version    
     - nvm ls
     - echo "nvm ls done"
-    - java -version
+
   post_ci:
     - echo "true6"
