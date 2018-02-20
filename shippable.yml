@@ -1,7 +1,5 @@
-language: c
+language: none
 
-compiler:
-  - gcc
 
 build:
   pre_ci:
