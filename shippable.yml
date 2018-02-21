@@ -1,7 +1,7 @@
 language: node_js
 
 services:
-  - rabbitmq
+  - redis
 
 build:
   pre_ci:
