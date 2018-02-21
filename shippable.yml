@@ -1,7 +1,7 @@
 language: node_js
 
 services:
-  - mongodb
+  - mysql
 
 build:
   pre_ci:
