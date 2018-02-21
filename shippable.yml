@@ -1,7 +1,7 @@
 language: node_js
 
 services:
-  - riak
+  - selenium
 
 build:
   pre_ci:
