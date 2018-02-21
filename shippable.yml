@@ -1,7 +1,7 @@
 language: node_js
 
 services:
-  - neo4j
+  - postgres
 
 build:
   pre_ci:
