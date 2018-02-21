@@ -1,7 +1,7 @@
 language: node_js
 
 services:
-  - sqllite
+  - sqlite
 
 build:
   pre_ci:
