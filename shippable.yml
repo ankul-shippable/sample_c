@@ -1,7 +1,7 @@
 language: node_js
 
 services:
-  - couchdb
+  - elasticsearch
 
 build:
   pre_ci:
