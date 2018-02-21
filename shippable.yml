@@ -1,7 +1,19 @@
 language: node_js
 
 services:
-  - sqlite
+  - cassandra
+  - couchdb
+  - elasticsearch
+  - memcached
+  - mongodb 
+  - mysql
+  - neo4j
+  - postgres
+  - rabbitmq
+  - redis
+  - rethinkdb
+  - riak
+  - selenium
 
 build:
   pre_ci:
