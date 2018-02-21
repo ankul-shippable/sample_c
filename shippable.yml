@@ -1,7 +1,7 @@
 language: node_js
 
 services:
-  - cassandra
+  - couchdb
 
 build:
   pre_ci:
