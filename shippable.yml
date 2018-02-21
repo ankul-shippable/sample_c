@@ -8,7 +8,7 @@ build:
     - echo 'true'
   pre_ci_boot:
     image_name: drydock/u16all
-    image_tag: master
+    image_tag: latest
     pull: false
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
     
