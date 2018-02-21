@@ -1,7 +1,7 @@
 language: node_js
 
 services:
-  - mysql
+  - neo4j
 
 build:
   pre_ci:
