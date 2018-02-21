@@ -1,7 +1,7 @@
 language: node_js
 
 services:
-  - elasticsearch
+  - memcached
 
 build:
   pre_ci:
