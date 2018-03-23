@@ -1,35 +1,9 @@
 language: node_js
 
-services:
-  - cassandra
-  - couchdb
-  - elasticsearch
-  - memcached
-  - mongodb 
-  - mysql
-  - neo4j
-  - postgres
-  - rabbitmq
-  - redis
-  - rethinkdb
-  - riak
-  - selenium
 
 build:
-  pre_ci:
-    - echo 'true'
-  pre_ci_boot:
-    image_name: drydock/u16all
-    image_tag: master
-    pull: false
-    options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
-    
   ci:
     - echo "lang c"
-    - printenv
-    - java -version    
-    - nvm ls
-    - echo "nvm ls done"
 
   post_ci:
     - echo "true6"
