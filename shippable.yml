@@ -1,13 +1,14 @@
 language: node_js
 
-env:
-  matrix:
-    - M1=ONE
+node_js:
+  - 4.8.7
 
 build:
   ci:
-    - if [ "$(($BUILD_NUMBER % 2))" -eq 0 ]; then failing it; fi # fail if build number is even
-    - printenv
-
-  post_ci:
-    - echo "true6"
+    - apt-get install tree
+    - TRANSFER=$(shipctl get_resource_state in_job)
+    - tree $TRANSFER
+    - sha1sum $TRANSFER/sample_node_repo.tar
+    - stat $TRANSFER/sample_node_repo.tar
+    - du -h $TRANSFER
+    - cat $TRANSFER/in_job.env
