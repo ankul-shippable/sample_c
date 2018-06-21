@@ -26,4 +26,5 @@ build:
     - shipctl put_resource_state res_state "KEY2" "res_state_value2_"$SHIPPABLE_BUILD_NUMBER   
     - sha1sum $RES_STATE_FILES/sample_node_repo.tar 
     - stat $RES_STATE_FILES/sample_node_repo.tar
+    - ls -al $RES_STATE_FILES
     - cat $RES_STATE_FILES/res_state.env
