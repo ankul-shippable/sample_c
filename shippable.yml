@@ -17,8 +17,8 @@ build:
     - export RES_STATE_IN_FILES=/build/IN/res_state/state
     - echo "Reading from $RES_STATE_IN_FILES"
     - tree $RES_STATE_IN_FILES
-    - sha1sum $RES_STATE_IN_FILES/state_repo.tar 
-    - stat $RES_STATE_IN_FILES/state_repo.tar
+    #- sha1sum $RES_STATE_IN_FILES/state_repo.tar 
+    #- stat $RES_STATE_IN_FILES/state_repo.tar
     - cat $JOB_PREVIOUS_STATE/sample_c_runCI.env
     - cat $JOB_PREVIOUS_STATE/res_state.env
     - RES_STATE_OUT_FILES=$(shipctl get_resource_state res_state)
