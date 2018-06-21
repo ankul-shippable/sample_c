@@ -17,9 +17,9 @@ build:
     - RES_STATE_FILES=$(shipctl get_resource_state res_state)
     - echo "Reading from $RES_STATE_FILES"
     - tree $RES_STATE_FILES
-    - sha1sum $RES_STATE_FILES/sample_node_repo.tar 
-    - stat $RES_STATE_FILES/sample_node_repo.tar
-    - cat $RES_STATE_FILES/sample_node_runCI.env
+    #- sha1sum $RES_STATE_FILES/sample_node_repo.tar 
+    #- stat $RES_STATE_FILES/sample_node_repo.tar
+    #- cat $RES_STATE_FILES/sample_node_runCI.env
     - echo "Writing to $RES_STATE_FILES"
     - tar cvf $RES_STATE_FILES/sample_node_repo.tar $SAMPLE_NODE_REPO_STATE
     - shipctl post_resource_state in_job "KEY1" "in_job_value1_"$SHIPPABLE_BUILD_NUMBER
