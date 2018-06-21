@@ -20,7 +20,7 @@ build:
     - sha1sum $RES_STATE_IN_FILES/sample_node_repo.tar 
     - stat $RES_STATE_IN_FILES/sample_node_repo.tar
     - cat $JOB_PREVIOUS_STATE/sample_c_runCI.env
-    - RES_STATE_OUT_FILES=$(shipctl get_resource_state in_job)
+    - RES_STATE_OUT_FILES=$(shipctl get_resource_state res_state)
     - echo "Writing to $RES_STATE_OUT_FILES"
     - tar cvf $RES_STATE_OUT_FILES/sample_node_repo.tar $SAMPLE_NODE_REPO_STATE
     - shipctl post_resource_state res_state "KEY1" "res_state_value1"$SHIPPABLE_BUILD_NUMBER
@@ -30,5 +30,6 @@ build:
     - ls -al $RES_STATE_OUT_FILES
     - ls -al $RES_STATE_IN_FILES
     - SAMPLE_C_FILES=$(shipctl get_resource_state sample_c_runCI)
+    - shipctl post_resource_state sample_c_runCI "KEY1" "sample_c_runCI_value1"$SHIPPABLE_BUILD_NUMBER
     - ls -al $SAMPLE_C_FILES
     #- cat $SAMPLE_C_FILES/res_state.env
