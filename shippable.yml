@@ -17,17 +17,17 @@ build:
     - export RES_STATE_IN_FILES=/build/IN/res_state/state
     - echo "Reading from $RES_STATE_IN_FILES"
     - tree $RES_STATE_IN_FILES
-    - sha1sum $RES_STATE_IN_FILES/sample_node_repo.tar 
-    - stat $RES_STATE_IN_FILES/sample_node_repo.tar
+    - sha1sum $RES_STATE_IN_FILES/state_repo.tar 
+    - stat $RES_STATE_IN_FILES/state_repo.tar
     - cat $JOB_PREVIOUS_STATE/sample_c_runCI.env
     - cat $JOB_PREVIOUS_STATE/res_state.env
     - RES_STATE_OUT_FILES=$(shipctl get_resource_state res_state)
     - echo "Writing to $RES_STATE_OUT_FILES"
-    - tar cvf $RES_STATE_OUT_FILES/sample_node_repo.tar $SAMPLE_NODE_REPO_STATE
+    - tar cvf $RES_STATE_OUT_FILES/state_repo.tar $SAMPLE_NODE_REPO_STATE
     - shipctl post_resource_state res_state "KEY1" "res_state_value1"$SHIPPABLE_BUILD_NUMBER
     - shipctl put_resource_state res_state "KEY2" "res_state_value2"$SHIPPABLE_BUILD_NUMBER
-    - sha1sum $RES_STATE_OUT_FILES/sample_node_repo.tar 
-    - stat $RES_STATE_OUT_FILES/sample_node_repo.tar
+    - sha1sum $RES_STATE_OUT_FILES/state_repo.tar 
+    - stat $RES_STATE_OUT_FILES/state_repo.tar
     - ls -al $RES_STATE_OUT_FILES
     - ls -al $RES_STATE_IN_FILES
     - SAMPLE_C_FILES=$(shipctl get_resource_state sample_c_runCI)
