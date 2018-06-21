@@ -26,4 +26,4 @@ build:
     - shipctl put_resource_state in_job "KEY2" "in_job_value2_"$SHIPPABLE_BUILD_NUMBER   
     - sha1sum $RES_STATE_FILES/sample_node_repo.tar 
     - stat $RES_STATE_FILES/sample_node_repo.tar
-    - cat $RES_STATE_FILES/in_job.env
+    - cat $RES_STATE_FILES/res_state.env
