@@ -5,6 +5,7 @@ node_js:
 
 build:
   ci:
+    - printenv
     - apt-get install tree
     - TRANSFER=$(shipctl get_resource_state in_job)
     - tree $TRANSFER
