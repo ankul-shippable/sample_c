@@ -19,7 +19,7 @@ build:
     - tree $RES_STATE_IN_FILES
     - sha1sum $RES_STATE_IN_FILES/sample_node_repo.tar 
     - stat $RES_STATE_IN_FILES/sample_node_repo.tar
-    - cat $JOB_PREVIOUS_STATE/sample_node_runCI.env
+    - cat $JOB_PREVIOUS_STATE/sample_c_runCI.env
     - RES_STATE_OUT_FILES=$(shipctl get_resource_state in_job)
     - echo "Writing to $RES_STATE_OUT_FILES"
     - tar cvf $RES_STATE_OUT_FILES/sample_node_repo.tar $SAMPLE_NODE_REPO_STATE
