@@ -10,4 +10,3 @@ build:
     - SAMPLE_C_FILES=$(shipctl get_resource_state sample_c_runCI)
     - shipctl post_resource_state sample_c_runCI "KEY1" "sample_c_runCI_value1"$SHIPPABLE_BUILD_NUMBER
     - ls -al $SAMPLE_C_FILES
-    - cat $SAMPLE_C_FILES/res_state.env
