@@ -3,10 +3,15 @@ language: node_js
 node_js:
   - 4.8.7
 
+env:    
+  matrix:
+    - ENV1: "foo1"
+    - ENV1: "foo2"
+    - ENV1: "foo3"
+    - ENV1: "foo4"     
+
 build:
   ci:
     - printenv
     - apt-get install tree
-    - SAMPLE_C_FILES=$(shipctl get_resource_state sample_c_runCI)
-    - shipctl post_resource_state sample_c_runCI "KEY1" "sample_c_runCI_value1"$SHIPPABLE_BUILD_NUMBER
-    - ls -al $SAMPLE_C_FILES
+    - shipctl post_resource_state "nginx-image" "versionName" "build_"$SHIPPABLE_BUILD_NUMBER
