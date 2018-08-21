@@ -8,7 +8,7 @@ env:
     - ENV1: "foo1"
     - ENV1: "foo2"
     - ENV1: "foo3"
-    - ENV1: "foo4"     
+    - ENV1: "foo4a"   
 
 build:
   ci:
