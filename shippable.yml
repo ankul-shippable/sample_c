@@ -1,17 +1,8 @@
 language: node_js
 
 node_js:
-  - 4.8.7
-
-env:    
-  matrix:
-    - ENV1: "foo1"
-    - ENV1: "foo2"
-    - ENV1: "foo3"
-    - ENV1: "foo4a"   
+  - 4.8.7  
 
 build:
   ci:
     - printenv
-    - apt-get install tree
-    - shipctl post_resource_state "nginx-image" "versionName" "build_"$SHIPPABLE_BUILD_NUMBER
